@@ -1,0 +1,88 @@
+classDiagram
+direction TB
+    class ModoCarreraFC25 {
+	    - carreraDeJugador: String
+	    - carreraDeDt: String
+	    + escoger()
+    }
+
+    class CarreraDeJugador {
+	    - jugadorCreado: String
+	    - jugadorReal: String
+	    + escoger()
+    }
+
+    class CarreraDeDT {
+	    - dtCreado: String
+	    - dtReal: String
+	    + escoger()
+    }
+
+    class JugadorCreado_3["JugadorCreado"] {
+	    - liga: String
+	    - division: int
+	    - equipo: String
+	    + jugar()
+    }
+
+    class DtCreado {
+	    - nombre: String
+	    - apellido: String
+	    - aspectosFaciales: String
+	    - tipoDePelo: String
+	    - ropa: String
+	    - accesorios: String
+	    + personalizar()
+    }
+
+    class JugadorCreado {
+	    - nombre: String
+	    - apellido: String
+	    - aspectosFaciales: String
+	    - tipoDePelo: String
+	    - usoDelUniforme: String
+	    - guayos: String
+	    - numeroDeCamiseta: int
+	    - estiloDeCorrer: String
+	    - estiloDeJugadasDeTacticaFija: String
+	    - nacionalidad: String
+	    - edad: int
+	    - estatura: float
+	    - peso: float
+	    - posicion: String
+	    + personalizar()
+    }
+
+    class JugadorReal {
+	    - liga: String
+	    - division: int
+	    - equipo: String
+	    - jugador: String
+	    + jugar()
+    }
+
+    class DtReal {
+	    - pais: String
+	    - division: int
+	    - equipo: String
+	    - dt: String
+	    + escoger()
+    }
+
+    class EscogerEquipo {
+	    - pais: String
+	    - division: int
+	    - equipo: String
+	    + jugar()
+    }
+
+    ModoCarreraFC25 -- CarreraDeJugador
+    ModoCarreraFC25 -- CarreraDeDT
+    CarreraDeJugador -- JugadorCreado
+    CarreraDeJugador -- JugadorReal
+    CarreraDeDT -- DtCreado
+    CarreraDeDT -- DtReal
+    JugadorCreado -- JugadorCreado_3
+    DtCreado -- EscogerEquipo
+    DtReal -- EscogerEquipo
+
